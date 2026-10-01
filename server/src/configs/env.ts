@@ -13,8 +13,10 @@ const envSchema = z.object({
 
   JWT_SECRET_KEY: z.string().min(1, "JWT_SECRET_KEY is required"),
 
-  REDIS_HOST: z.string().min(1, "REDIS_HOST is required").default("127.0.0.1"),
-  REDIS_PORT: z.coerce.number().default(6379),
+  REDIS_URL: z
+    .string()
+    .min(1, "REDIS_URL is required")
+    .default("redis://127.0.0.1:6379"),
 
   GROQ_API_KEY: z.string().min(1, "GROQ_API_KEY is required"),
 
