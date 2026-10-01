@@ -43,6 +43,7 @@ const connectDB = async (
     logger.warn(
       `Retrying MongoDB connection in ${delay / 1000}s (${retries} retries left)...`,
     );
+    logger.error(error);
 
     await new Promise((resolve) => setTimeout(resolve, delay));
     await connectDB(retries - 1, delay);
