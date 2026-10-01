@@ -2,8 +2,8 @@ import env from "#configs/env.js";
 import { ChatGroq } from "@langchain/groq";
 
 export const MODELS = {
-  REASONING: "llama-3.3-70b-versatile",
-  FAST: "llama-3.1-8b-instant",
+  REASONING: "openai/gpt-oss-120b",
+  FAST: "openai/gpt-oss-20b",
 } as const;
 
 type CreateModelOptions = {
