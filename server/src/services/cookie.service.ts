@@ -5,7 +5,7 @@ import env from "#configs/env.js";
 
 const baseCookieOptions: CookieOptions = {
   httpOnly: true,
-  sameSite: "lax",
+  sameSite: env.NODE_ENV === "production" ? "none" : "lax",
   secure: env.NODE_ENV === "production",
   maxAge: COOKIE_EXPIRES_IN,
 };
